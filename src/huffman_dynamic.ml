@@ -1,3 +1,6 @@
+(*Copyright (c) 2011, Martani Fakhrou
+All rights reserved.*)
+
 (* The leaf NYT # *)
 let anchor_leaf = DynamicTree.create_anchor_leaf ();;
 

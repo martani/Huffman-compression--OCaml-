@@ -1,3 +1,6 @@
+(*Copyright (c) 2011, Martani Fakhrou
+All rights reserved.*)
+
 let main () =
    try
      (*Dynamic / Static *)

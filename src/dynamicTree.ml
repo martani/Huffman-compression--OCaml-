@@ -1,3 +1,6 @@
+(*Copyright (c) 2011, Martani Fakhrou
+All rights reserved.*)
+
 (* a mess? the code was built on this data structure and it became too hard to change / simplify it*)
 type rec_leaf = { mutable weight_l : int; mutable data : char option; mutable parent_l : tree option ref; mutable order_l: int }
 and rec_node = { mutable weight_n : int; mutable left_child: tree ref; mutable right_child: tree ref; mutable parent_n: tree option ref; mutable order_n : int }

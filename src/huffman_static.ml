@@ -1,3 +1,6 @@
+(*Copyright (c) 2011, Martani Fakhrou
+All rights reserved.*)
+
 type tree = Leaf of int * char
             | Node of int * tree * tree
 
