@@ -1,7 +1,7 @@
 Static / Dynamic (adaptive) Huffman compression in OCaml
 ========================================================
 
-This program illustrates how to use the Huffman Static and dynamic methods to compress / uncompress files using OCaml.
+This program illustrates how to use the Huffman static and dynamic methods to compress/uncompress files using OCaml.
 
 ( **Note:** *the code is barely purely functional. If you intend to learn functional programming, look for better example on the web*).
 
