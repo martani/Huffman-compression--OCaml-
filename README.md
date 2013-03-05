@@ -1,16 +1,22 @@
 Static / Dynamic (adaptive) Huffman compression in OCaml
+========================================================
 
-=================================
-This program illustrates how to use the Huffman Static and 
-dynamic methods to compress / uncompress files using OCaml.
+This program illustrates how to use the Huffman Static and dynamic methods to compress / uncompress files using OCaml.
 
-Makefile directives
+( **Note:** *the code is barely purely functional. If you intend to learn functional programming, look for better example on the web*).
+
+Building and testing the code
 -------------------
-	make
-	make test: This directive tests the programm by compressing 
-	a (supposed existing) file in the working directory of the 
-	executable named "input" with this directive you test the 
-	static / dynmaic compression / decompression
+To build the program:
+`````
+$ make
+`````
+To test the program:
+`````
+$ make test file=/path/to/file/on/file/system
+`````
+This directive tests the program by compressing the file `file` using static and dynamic compression and decompression.
+It shows the time spent on each operation and if any errors occur between the compressed/uncompressed files, the `diff` command
+is used to check for such anomalies.
 
-Distributed under the BSD license. (See LICENSE for more
-information.)
+Distributed under the BSD license. (See LICENSE for more information.)
