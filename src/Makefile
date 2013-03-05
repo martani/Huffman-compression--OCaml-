@@ -15,20 +15,24 @@ ANNOTATE = yes
 all: native-code
 
 test:huffman
-	@echo "Testing... static huffman"
-	@echo "Compress:"
-	@time ./huffman stat c "input" "output"
-	@echo "\nUncompress"
-	@time ./huffman stat d "output" "output2"
-	@echo "\n<<<<<<<<<<<<<<<<Compressed = Uncompress ??>>>>>>>>>>>>>>>>"
-	@diff "input" "output2"
-	@echo "\nTesting... dynamic huffman"
-	@echo "Compress"
-	@time ./huffman dyn c "input" "output_d"
-	@echo "\nUncompress"
-	@time ./huffman dyn d "output_d" "output_d2"
-	@echo "\n<<<<<<<<<<<<<<<Compressed = Uncompress ??>>>>>>>>>>>>>>>>>"
-	@diff "input" "output_d2"
+	@echo "Testing Static Huffman ..."
+	@echo "[[ Compress ]]"
+	@time ./huffman stat c $(file) "output_oc_hu__"
+	@echo ""
+	@echo "[[ Uncompress ]]"
+	@time ./huffman stat d "output_oc_hu__" "output2_oc_hu__"
+	@echo "<<< Compressed ?? Uncompress >>> If diff shows any messages, a bug exists. No messages, all good."
+	@diff $(file) "output2_oc_hu__"
+	@echo ""
+	@echo "Testing Dynamic Huffman ..."
+	@echo "[[ Compress ]]"
+	@time ./huffman dyn c $(file) "output_d_oc_hu__"
+	@echo ""
+	@echo "[[Uncompress ]]"
+	@time ./huffman dyn d "output_d_oc_hu__" "output_d2_oc_hu__"
+	@echo "<<< Compressed ?? Uncompress >>> If diff shows any messages, a bug exists. No messages, all good."
+	@diff $(file) "output_d2_oc_hu__"
+	@rm output_oc_hu__ output2_oc_hu__ output_d_oc_hu__ output_d2_oc_hu__
 
 
 include OCamlMakefile
